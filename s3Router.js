@@ -35,7 +35,7 @@ function S3Router(options) {
     s3.getSignedUrl('putObject', params, function(err, data) {
       if (err) {
         console.log(err);
-        return res.send(500, "Cannot create S3 signed URL");
+        return res.status(500).send("Cannot create S3 signed URL");
       }
 
       console.log('data: ', data)
