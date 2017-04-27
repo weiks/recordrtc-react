@@ -24,7 +24,7 @@ app.use(function(req, res, next) {
 app.use(bodyParser.json());
 
 app.use('/s3', s3Router({
-  bucket: 'recordrtc-test',
+  bucket: 'com.weiksner.mp3',
   ACL: 'public-read'
 }))
 
