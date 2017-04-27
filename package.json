@@ -4,7 +4,8 @@
   "description": "RecordRTC example with React and Node/Express",
   "main": "index.js",
   "scripts": {
-    "start": "webpack --watch & nodemon server.js"
+    "start": "webpack --watch & nodemon server.js",
+    "build": "webpack -p"
   },
   "author": "Suzanne Wang",
   "license": "MIT",

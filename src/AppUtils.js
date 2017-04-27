@@ -1,6 +1,6 @@
 // handle user media capture
 export function captureUserMedia(callback) {
-  var params = { audio: false, video: true };
+  var params = { audio: true, video: false };
 
   navigator.getUserMedia(params, callback, (error) => {
     alert(JSON.stringify(error));
@@ -10,7 +10,7 @@ export function captureUserMedia(callback) {
 // handle S3 upload
 function getSignedUrl(file) {
   let queryString = '?objectName=' + file.id + '&contentType=' + encodeURIComponent(file.type);
-  return fetch('/s3/sign' + queryString)
+  return fetch('https://5vacjimv21.execute-api.us-east-1.amazonaws.com/dev/s3-presigned-url/' + queryString)
   .then((response) => {
     return response.json();
   })
