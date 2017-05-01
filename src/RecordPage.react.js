@@ -94,8 +94,11 @@ class RecordPage extends React.Component {
   }
 
   checkRecordingStatus(partId) {
-    let queryString = '?partId=' + partId;
-    fetch('https://wbebf3n8y1.execute-api.us-east-1.amazonaws.com/dev/evaluate-performance/' + queryString)
+    //let queryString = '?partId=' + partId;
+    //fetch('https://wbebf3n8y1.execute-api.us-east-1.amazonaws.com/dev/evaluate-performance/' + queryString)
+    let queryString = '?s3=https://s3.amazonaws.com/com.weiksner.mp3/' + partId + ".ogg"
+    console.log(queryString)
+    fetch('http://localhost' + queryString)
   .then((response) => {
     return response.json()
   })
